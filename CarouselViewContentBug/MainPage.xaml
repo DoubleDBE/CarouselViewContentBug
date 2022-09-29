@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="CarouselViewContentBug.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CarouselViewContentBug">
+
+    <CarouselView x:Name="cv"
+                  ItemsSource="{Binding Items}"
+                  Loop="False">
+
+        <CarouselView.ItemTemplate>
+
+            <DataTemplate>
+
+                <controls:UniformGrid BindableLayout.ItemsSource="{Binding}"
+                                      ColumnDefinitions="*,*,*,*,*"
+                                      ColumnSpacing="5"
+                                      RowDefinitions="*,*,*,*,*,*"
+                                      RowSpacing="5">
+
+                    <BindableLayout.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <Button Background="DarkRed"
+                                    Text="{Binding}"
+                                    TextColor="WhiteSmoke" />
+
+                        </DataTemplate>
+
+                    </BindableLayout.ItemTemplate>
+
+                </controls:UniformGrid>
+
+            </DataTemplate>
+
+        </CarouselView.ItemTemplate>
+
+    </CarouselView>
+
+</ContentPage>
